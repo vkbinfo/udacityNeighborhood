@@ -30,7 +30,7 @@ var favPlaces=[
         id:5
     }
 
-]
+];
 
 var urlFourSquareStart="https://api.foursquare.com/v2/venues/search?"+
 "client_id=C3L2LG1EZLNAPO2OXGREUS4FBRG3IRIOBZQTZKVN4YSPLODI&"+
@@ -76,7 +76,7 @@ function viewModel(){
          else{
              marker.setMap(null);
         }
-     };
+     }
     });
 
 //let's use foursquare API
@@ -101,15 +101,16 @@ function viewModel(){
         }).fail(function(){
             console.log("iamhere");
             alert("Something went wrong with Internet.");
-        })
-    })
-}
-that.gettingInfoAboutPlaces();
+        });
+    });
 };
+that.gettingInfoAboutPlaces();
+}
 
 var map;
 var markers=[];
 var infoWindow=[];
+
 function initMap(){
     //let's create a google map object and we will do stuff there
     map = new google.maps.Map(document.getElementById('map'),
@@ -138,7 +139,7 @@ function initMap(){
     //we are setting our ko viewmodel, Because we need markers to manuplate on
     //the map.
     ko.applyBindings(new viewModel());
-};
+}
 
 
 //error handling for google maps

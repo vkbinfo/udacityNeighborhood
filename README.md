@@ -21,7 +21,7 @@ There's also extra info pulled from the Foursquare API where available. This inc
 
 # How To Use
 
-1. Click here to try it out: ➡  <http://vkbinfo.github.io/udacity_neighborhood/>
+1. Click here to try it out: ➡  <http://vkbinfo.github.io/udacityNeighborhood/>
 2. Click on any of the places on the map / sidebar for more information
 3. Type in the white bar if you only want to see a few of the places listed on the map to make it easier to spot.
 
