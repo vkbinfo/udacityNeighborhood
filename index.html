@@ -1,46 +1,48 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Neighborhood Map</title>
-        <link rel="stylesheet" href="css/style.css">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Neighborhood Map</title>
+    <link rel="stylesheet" href="css/style.css">
 
-    </head>
-    <body>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h3>My Favourite Places</h3>
-                    <!-- for search functionality by knockoutJs -->
-                    <div class="search">
-                        <input class="form-control" placeholder="Search…" type="search"
-                        name="filter" data-bind="value: query, valueUpdate: 'keyup'"
-                        autocomplete="off">
-                    </div>
-                    <ul id="myUL" data-bind="foreach:searchResults">
-                          <li data-bind="click:$parent.clickEventOnPlaceList,text:name,id:id"></li>
-                    </ul>
-                </div>
-                <div class="col-md-8">
-                    <div id='map'></div>
-                    <!-- in this async javascript call, this will load javascript code for
-                        and we have given the callback parameter init, so when it is downloaded,
-                        this javascript will look for init function in script;
-                     -->
-                    <script async defer
-                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcLuIFR4EgmrbzFPrp7g-gaJYgLbDKZm8&callback=initMap"
-                     >  </script>
-                 </div>
-                 </div>
-
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <h3>My Favourite Places</h3>
+            <!-- for search functionality by knockoutJs -->
+            <div class="search">
+                <input class="form-control" placeholder="Search…" type="search"
+                       name="filter"
+                       data-bind="value: query, valueUpdate: 'keyup'"
+                       autocomplete="off">
             </div>
+            <ul id="myUL" data-bind="foreach:searchResults">
+                <li data-bind="click:$parent.clickEventOnPlaceList,text:name,id:id"></li>
+            </ul>
+        </div>
+        <div class="col-md-8">
+            <div id='map'></div>
+            <!-- in this async javascript call, this will load javascript code for
+                and we have given the callback parameter init, so when it is downloaded,
+                this javascript will look for init function in script;
+             -->
+            <script async defer
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcLuIFR4EgmrbzFPrp7g-gaJYgLbDKZm8&callback=initMap"
+                    onerror="errorHandling()"
+            ></script>
         </div>
     </div>
-    <script src="js/lib/knockout.js"></script>
-    <script src="js/lib/jquery.js"></script>
-    <script type="text/javascript" src="js/script.js">
-    </script>
+
+</div>
+</div>
+</div>
+<script src="js/lib/knockout.js"></script>
+<script src="js/lib/jquery.js"></script>
+<script type="text/javascript" src="js/script.js">
+</script>
 </body>
 
 </html>

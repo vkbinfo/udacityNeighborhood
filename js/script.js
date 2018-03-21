@@ -91,15 +91,16 @@ function viewModel(){
             var addressArray=placeData.location.formattedAddress;
             var webLink="<div><a href='https://foursquare.com/v/"+placeData.id+
             "'>Web link for this place</a></div>";
-            var addressString=', ';
+            var addressString='';
             addressArray.forEach(function(element){
-                addressString += element + " ";
+                addressString += element + ", ";
             });
             infoWindow[place.id].setContent("<div>"+name+"</div><div>"+
             addressString+"</div>"+webLink);
 
-        }).error(function(){
-            alert("Something went wrong.")
+        }).fail(function(){
+            console.log("iamhere");
+            alert("Something went wrong with Internet.");
         })
     })
 }
