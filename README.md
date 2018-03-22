@@ -4,6 +4,14 @@
 
 > Developed for Project 5 of the **Udacity Full-Stack Web Developer Nanodegree**. 🎓
 
+# How To Use
+
+1. Click here to try it out: ➡  <http://vkbinfo.github.io/udacityNeighborhood/> or Fork this repository and load the index file into your browser.
+2. Click on any of the places on the map / sidebar for more information
+3. Type in the white bar if you only want to see a few of the places listed on the map to make it easier to spot.
+4. You can click on any marker to see the related information in a pop up window.
+5. You can also click on any list item and this will bounce the related marker and also will pop up the marker information above marker.
+
 This is the **Udacity Neighborhood Map Project**. It's intended as a challenge to put together a website from various APIs. This includes making function calls to Google Maps and other location-based services like Foursquare. 🔰
 
 Included is a list of my and my friends' favorite restaurants and hangouts in the Mangalore area of Karnataka. 🍽 🍲
@@ -19,10 +27,6 @@ There's also extra info pulled from the Foursquare API where available. This inc
 
 ![Screenshot of Map](http://i.imgur.com/V73lBX0.png)
 
-# How To Use
 
-1. Click here to try it out: ➡  <http://vkbinfo.github.io/udacityNeighborhood/>
-2. Click on any of the places on the map / sidebar for more information
-3. Type in the white bar if you only want to see a few of the places listed on the map to make it easier to spot.
 
 #Thanks for Reading visiting this site.
