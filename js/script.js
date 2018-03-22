@@ -48,6 +48,8 @@ function viewModel(){
     that.clickEventOnPlaceList=function(element){
         var marker=markers[element.id];
         infoWindow[element.id].open(map,marker);
+        markers[element.id].setAnimation(google.maps.Animation.BOUNCE);
+        setTimeout(function(){ markers[element.id].setAnimation(null);}, 750);
     };
     //The most wonderful thing about computed and observable that
     //ko automatically update the searchResults whenever query (value of input
@@ -69,12 +71,12 @@ function viewModel(){
         });
 
      for(var i =0;i< favPlaces.length;i++){
-         var marker=markers[i];
          if (list.includes(i)){
-             marker.setMap(map);
+             markers[i].setMap(map);
+
          }
          else{
-             marker.setMap(null);
+             markers[i].setMap(null);
         }
      }
     });
@@ -116,7 +118,7 @@ function initMap(){
     map = new google.maps.Map(document.getElementById('map'),
     {center:{lat:12.875310,lng:74.840524},zoom:13});
     // let's create a marker on map, which tells about some information
-    favPlaces.forEach(function(data){
+    favPlaces.forEach(function(data,index){
         var marker = new google.maps.Marker({
             position:data.geoLocation,
             map:map,
@@ -126,12 +128,15 @@ function initMap(){
             });
         //now lets add a click listener to the marker object, so when we clicks
         // it pops up the information.
+        markers.push(marker);
         infoWindow.push(popupInfoWindow);
         marker.addListener('click',function(){
             //now we have to bind the infoWindow, map and the marker, its great.
             popupInfoWindow.open(map,marker);
+            marker.setAnimation(google.maps.Animation.BOUNCE);
+            setTimeout(function(){ marker.setAnimation(null);}, 750);
         });
-        markers.push(marker);
+
     });
     //let's create a window, when someone clicks we can show some
     //information
